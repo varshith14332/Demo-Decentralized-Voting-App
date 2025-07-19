@@ -297,9 +297,24 @@ export default function Index() {
 
                   {election.status === "active" && (
                     <div className="mt-6">
-                      <Button className="w-full bg-neon-purple text-white hover:bg-neon-purple/90">
-                        Cast Your Vote
-                      </Button>
+                      <Link to={`/vote/${election.id}`}>
+                        <Button className="w-full bg-neon-purple text-white hover:bg-neon-purple/90">
+                          Cast Your Vote
+                        </Button>
+                      </Link>
+                    </div>
+                  )}
+
+                  {election.status === "completed" && (
+                    <div className="mt-6">
+                      <Link to={`/vote/${election.id}`}>
+                        <Button
+                          variant="outline"
+                          className="w-full cyber-border"
+                        >
+                          View Results
+                        </Button>
+                      </Link>
                     </div>
                   )}
                 </CardContent>
