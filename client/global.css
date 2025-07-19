@@ -122,6 +122,23 @@
       BlinkMacSystemFont,
       "Segoe UI",
       sans-serif;
+    background-image:
+      radial-gradient(
+        circle at 20% 80%,
+        hsl(var(--neon-cyan) / 0.1) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 80% 20%,
+        hsl(var(--neon-purple) / 0.1) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 40% 40%,
+        hsl(var(--neon-blue) / 0.05) 0%,
+        transparent 50%
+      );
+    background-attachment: fixed;
   }
 }
 
