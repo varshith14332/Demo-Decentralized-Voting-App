@@ -180,7 +180,7 @@ export default function VotePage() {
 
       <div className="container mx-auto px-4 py-8">
         {/* Election Header */}
-        <div className="animate-fade-in">
+        <div className="animate-fade-in" style={{ animationDelay: "0.1s" }}>
           <Card className="glass-card mb-8">
             <CardHeader>
               <div className="flex items-start justify-between">
