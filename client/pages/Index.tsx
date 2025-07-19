@@ -160,6 +160,11 @@ export default function Index() {
               <p className="text-sm text-muted-foreground mb-4">
                 Connect your Web3 wallet to participate in voting
               </p>
+              {error && (
+                <div className="text-destructive text-sm mb-4 p-3 glass-card border border-destructive/30">
+                  {error}
+                </div>
+              )}
               <Button
                 onClick={connectWallet}
                 disabled={isConnecting}
