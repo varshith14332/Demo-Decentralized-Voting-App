@@ -307,7 +307,11 @@ export default function VotePage() {
               <CardContent>
                 <div className="space-y-4">
                   {election.options.map((option, index) => (
-                    <div key={option.id} className="relative">
+                    <div
+                      key={option.id}
+                      className="relative animate-slide-up"
+                      style={{ animationDelay: `${0.3 + index * 0.1}s` }}
+                    >
                       <div
                         className={`glass-card p-4 cursor-pointer transition-all hover-glow ${
                           selectedOption === option.id
