@@ -204,4 +204,44 @@
       0 0 60px hsl(var(--neon-cyan) / 0.2);
     transform: translateY(-2px);
   }
+
+  .floating-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .floating-particles::before {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 2px;
+    height: 2px;
+    background: hsl(var(--neon-cyan));
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+    box-shadow:
+      100px 200px 0 hsl(var(--neon-purple) / 0.3),
+      300px 100px 0 hsl(var(--neon-blue) / 0.3),
+      500px 300px 0 hsl(var(--neon-cyan) / 0.2),
+      700px 150px 0 hsl(var(--neon-purple) / 0.2),
+      200px 400px 0 hsl(var(--neon-blue) / 0.3);
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+      opacity: 0.7;
+    }
+    50% {
+      transform: translateY(-20px) rotate(180deg);
+      opacity: 1;
+    }
+  }
 }
