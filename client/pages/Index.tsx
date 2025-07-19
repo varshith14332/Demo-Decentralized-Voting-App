@@ -63,25 +63,14 @@ const elections = [
 ];
 
 export default function Index() {
-  const [isConnected, setIsConnected] = useState(false);
-  const [walletAddress, setWalletAddress] = useState<string | null>(null);
-  const [isConnecting, setIsConnecting] = useState(false);
-
-  const connectWallet = async () => {
-    setIsConnecting(true);
-
-    // Mock wallet connection - in real implementation, use MetaMask
-    setTimeout(() => {
-      setIsConnected(true);
-      setWalletAddress("0x742d35Cc8C3b8b3A8c3b8c3b8c3b8c3b8c3b8c3b");
-      setIsConnecting(false);
-    }, 2000);
-  };
-
-  const disconnectWallet = () => {
-    setIsConnected(false);
-    setWalletAddress(null);
-  };
+  const {
+    isConnected,
+    address: walletAddress,
+    isConnecting,
+    error,
+    connectWallet,
+    disconnectWallet,
+  } = useWallet();
 
   const formatTimeRemaining = (endTime: string) => {
     const end = new Date(endTime);
